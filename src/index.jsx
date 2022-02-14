@@ -12,7 +12,7 @@ ReactDOM.render(
     <BrowserRouter>
       <Switch>
         <Route path="/" component={LoginPage} exact />
-        <ProtectedRoute path={routes.homepageRoute} component={Homepage} exact />
+        <ProtectedRoute path={routes.homepageRoute} component={Homepage} />
       </Switch>
     </BrowserRouter>
   </React.StrictMode>,

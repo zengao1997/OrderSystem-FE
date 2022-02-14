@@ -6,6 +6,7 @@ import { AccountBookOutlined, LockOutlined, UserOutlined } from '@ant-design/ico
 import './index.scss';
 import { useHistory } from 'react-router-dom';
 import dayjs from 'dayjs';
+import router from '../../utilities/router';
 
 function LoginPage() {
   const history = useHistory();
@@ -16,26 +17,26 @@ function LoginPage() {
       notification.error({ message: 'Login Failed', description: "username and password doesn't match" });
     } else {
       localStorage.setItem('order-token', dayjs().format('YYYY-MM-DD'));
-      history.push('homepage');
+      history.push(router.homepageRoute);
     }
   };
   return (
     <div className="login-container">
       <Card className="card">
         <AccountBookOutlined className="icon" />
-        <div className="header">Order System Login</div>
+        <div className="header">订单系统</div>
         <Form autoComplete="off">
           <Form.Item
             rules={[
               {
                 required: true,
-                message: 'Please input your username!',
+                message: '请输入用户名!',
               },
             ]}
             name="username"
           >
             <Input
-              placeholder="Enter your username"
+              placeholder="用户名"
               prefix={<UserOutlined className="input-icon" />}
               className="input"
               value={userName}
@@ -46,7 +47,7 @@ function LoginPage() {
             rules={[
               {
                 required: true,
-                message: 'Please input your password!',
+                message: '请输入密码!',
               },
             ]}
             name="password"
@@ -54,7 +55,7 @@ function LoginPage() {
             <Input.Password
               prefix={<LockOutlined className="input-icon" />}
               value={password}
-              placeholder="Input password"
+              placeholder="密码"
               className="input"
               onChange={(event) => setPassword(event.target.value)}
             />

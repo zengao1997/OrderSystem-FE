@@ -1,0 +1,51 @@
+@import "src/style/color";
+
+.layout {
+  .sider {
+    height: 100vh;
+
+    .logo {
+      height: 32px;
+      margin: 16px;
+      text-align: center;
+    }
+
+    .icon {
+      font-size: 32px;
+      color: $main-color;
+    }
+
+  }
+
+  .trigger {
+    padding: 0 24px;
+    font-size: 18px;
+    line-height: 64px;
+    cursor: pointer;
+    transition: color 0.3s;
+    color: $main-color;
+  }
+
+  .trigger:hover {
+    color: #1890ff;
+  }
+
+  .ant-layout {
+    background: white;
+  }
+  .breadcrumb {
+    span:last-child a {
+      color: unset;
+    }
+    display: inline;
+    .ant-breadcrumb-separator {
+      color: gray;
+    }
+    .breadcrumb-child {
+      color: gray;
+    }
+    a {
+      color: white;
+    }
+  }
+}
