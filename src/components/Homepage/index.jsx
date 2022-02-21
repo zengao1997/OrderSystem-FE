@@ -88,7 +88,7 @@ function Homepage() {
         <div className="logo" onClick={() => history.push(`${url}/home`)}>
           <AccountBookOutlined className="icon" />
         </div>
-        <Menu mode="inline" defaultSelectedKeys={['1']} theme="dark" selectedKeys={selectKeys}>
+        <Menu mode="inline" theme="dark" selectedKeys={selectKeys}>
           <Menu.Item key="1" onClick={() => history.push(`${url}/home`)} icon={<HomeOutlined />}>
             首页
           </Menu.Item>

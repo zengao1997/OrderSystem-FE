@@ -2,12 +2,13 @@
 
 .layout {
   .sider {
-    height: 100vh;
+    min-height: 100vh;
 
     .logo {
       height: 32px;
       margin: 16px;
       text-align: center;
+      cursor: pointer;
     }
 
     .icon {
