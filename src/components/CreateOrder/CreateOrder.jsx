@@ -5,6 +5,7 @@ import {
 import ReactQuill from 'react-quill';
 import './index.scss';
 import 'react-quill/dist/quill.snow.css';
+import { createOrUpdateItem } from '../../service';
 
 function CreateOrder() {
   const modules = {
@@ -30,154 +31,154 @@ function CreateOrder() {
         wrapperCol={{ span: 20 }}
         layout="horizontal"
         name="create-order"
-        onFinish={(values) => { console.log(values); }}
+        onFinish={async (values) => { await createOrUpdateItem(values); }}
         className="form"
       >
         <Form.Item label="商品分类" name="category" required>
           <Cascader
             options={[
               {
-                value: '服装',
+                value: 1,
                 label: '服装',
                 children: [
                   {
-                    value: '外套',
+                    value: 2,
                     label: '外套',
                   },
                   {
-                    value: 'T恤',
+                    value: 3,
                     label: 'T恤',
                   },
                   {
-                    value: '休闲裤',
+                    value: 4,
                     label: '休闲裤',
                   },
                   {
-                    value: '牛仔裤',
+                    value: 5,
                     label: '牛仔裤',
                   },
                   {
-                    value: '衬衫',
+                    value: 6,
                     label: '衬衫',
                   },
                   {
-                    value: '男鞋',
+                    value: 7,
                     label: '男鞋',
                   },
                 ],
               },
               {
-                value: '手机数码',
+                value: 8,
                 label: '手机数码',
                 children: [
                   {
-                    value: '手机通讯',
+                    value: 9,
                     label: '手机通讯',
                   },
                   {
-                    value: '手机配件',
+                    value: 10,
                     label: '手机配件',
                   },
                   {
-                    value: '摄影摄像',
+                    value: 11,
                     label: '摄影摄像',
                   },
                   {
-                    value: '影音娱乐',
+                    value: 12,
                     label: '影音娱乐',
                   },
                   {
-                    value: '数码配件',
+                    value: 13,
                     label: '数码配件',
                   },
                   {
-                    value: '智能设备',
+                    value: 14,
                     label: '智能设备',
                   },
                 ],
               },
               {
-                value: '家用电器',
+                value: 15,
                 label: '家用电器',
                 children: [
                   {
-                    value: '电视',
+                    value: 16,
                     label: '电视',
                   },
                   {
-                    value: '空调',
+                    value: 17,
                     label: '空调',
                   },
                   {
-                    value: '洗衣机',
+                    value: 18,
                     label: '洗衣机',
                   },
                   {
-                    value: '冰箱',
+                    value: 19,
                     label: '冰箱',
                   },
                   {
-                    value: '厨卫家电',
+                    value: 20,
                     label: '厨卫家电',
                   },
                   {
-                    value: '厨房小电',
+                    value: 21,
                     label: '厨房小电',
                   },
                   {
-                    value: '生活电器',
+                    value: 22,
                     label: '生活电器',
                   },
                   {
-                    value: '个护健康',
+                    value: 23,
                     label: '个护健康',
                   },
                 ],
               },
               {
-                value: '家居家装',
+                value: 24,
                 label: '家居家装',
                 children: [
                   {
-                    value: '厨房卫浴',
+                    value: 25,
                     label: '厨房卫浴',
                   },
                   {
-                    value: '灯饰照明',
+                    value: 26,
                     label: '灯饰照明',
                   },
                   {
-                    value: '五金工具',
+                    value: 27,
                     label: '五金工具',
                   },
                   {
-                    value: '卧室家具',
+                    value: 28,
                     label: '卧室家具',
                   },
                   {
-                    value: '客厅家具',
+                    value: 29,
                     label: '客厅家具',
                   },
                 ],
               },
               {
-                value: '汽车用品',
+                value: 30,
                 label: '汽车用品',
                 children: [
                   {
-                    value: '全新整车',
+                    value: 31,
                     label: '全新整车',
                   },
                   {
-                    value: '车载电器',
+                    value: 32,
                     label: '车载电器',
                   },
                   {
-                    value: '维修保养',
+                    value: 33,
                     label: '维修保养',
                   },
                   {
-                    value: '汽车装饰',
+                    value: 34,
                     label: '汽车装饰',
                   },
                 ],
@@ -188,34 +189,34 @@ function CreateOrder() {
         <Form.Item name="name" label="商品名称" rules={[{ required: true }]}>
           <Input />
         </Form.Item>
-        <Form.Item name="sub-title" label="副标题" rules={[{ required: true }]}>
+        <Form.Item name="subtitle" label="副标题" rules={[{ required: true }]}>
           <Input />
         </Form.Item>
         <Form.Item name="brand" label="商品品牌" rules={[{ required: true }]}>
           <Select>
-            <Select.Option value="小米">小米</Select.Option>
-            <Select.Option value="七匹狼">七匹狼</Select.Option>
-            <Select.Option value="海澜之家">海澜之家</Select.Option>
-            <Select.Option value="苹果">苹果</Select.Option>
-            <Select.Option value="三星">三星</Select.Option>
-            <Select.Option value="华为">华为</Select.Option>
-            <Select.Option value="格力">格力</Select.Option>
-            <Select.Option value="方太">方太</Select.Option>
-            <Select.Option value="万和">万和</Select.Option>
-            <Select.Option value="OPPO">OPPO</Select.Option>
-            <Select.Option value="NIKE">NIKE</Select.Option>
+            <Select.Option value={1}>小米</Select.Option>
+            <Select.Option value={2}>七匹狼</Select.Option>
+            <Select.Option value={3}>海澜之家</Select.Option>
+            <Select.Option value={4}>苹果</Select.Option>
+            <Select.Option value={5}>三星</Select.Option>
+            <Select.Option value={6}>华为</Select.Option>
+            <Select.Option value={7}>格力</Select.Option>
+            <Select.Option value={8}>方太</Select.Option>
+            <Select.Option value={9}>万和</Select.Option>
+            <Select.Option value={10}>OPPO</Select.Option>
+            <Select.Option value={11}>NIKE</Select.Option>
           </Select>
         </Form.Item>
         <Form.Item name="introduction" label="商品介绍">
           <Input.TextArea />
         </Form.Item>
-        <Form.Item name="item-number" label="商品货号">
+        <Form.Item name="item_number" label="商品货号">
           <Input />
         </Form.Item>
         <Form.Item name="price" label="商品售价" rules={[{ type: 'number', min: 0 }]}>
           <InputNumber />
         </Form.Item>
-        <Form.Item name="market-price" label="市场价" rules={[{ type: 'number', min: 0 }]}>
+        <Form.Item name="market_price" label="市场价" rules={[{ type: 'number', min: 0 }]}>
           <InputNumber />
         </Form.Item>
         <Form.Item name="inventory" label="商品库存" rules={[{ type: 'number', min: 0 }]}>
