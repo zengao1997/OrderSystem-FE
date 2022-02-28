@@ -36,6 +36,8 @@ function Homepage() {
         setSelectKeys(['1']);
       } else if (history.location.pathname.includes('create')) {
         setSelectKeys(['4']);
+      } else if (history.location.pathname.includes('items')) {
+        setSelectKeys(['3']);
       }
     }
   }, [history.location]);

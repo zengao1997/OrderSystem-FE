@@ -14,7 +14,6 @@ function request(
       ...options,
       headers,
     })
-      .then((response) => response?.json())
       .then(resolve)
       .catch((err) => {
         // eslint-disable-next-line prefer-promise-reject-errors
