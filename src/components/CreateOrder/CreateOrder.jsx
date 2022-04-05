@@ -26,7 +26,6 @@ function CreateOrder() {
     'list', 'bullet', 'indent',
     'link', 'image',
   ];
-  console.log(image);
   return (
     <Card className="create-order-card">
       <h2 className="title">创建订单</h2>

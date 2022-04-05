@@ -34,17 +34,22 @@
   .ant-layout {
     background: white;
   }
+
   .breadcrumb {
     span:last-child a {
       color: unset;
     }
+
     display: inline;
+
     .ant-breadcrumb-separator {
       color: gray;
     }
+
     .breadcrumb-child {
       color: gray;
     }
+
     a {
       color: white;
     }

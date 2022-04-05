@@ -16,6 +16,7 @@ import {
 } from 'react-router-dom';
 import Home from '../Home';
 import CreateOrder from '../CreateOrder/CreateOrder';
+import ItemList from '../ItemList';
 
 const {
   Header, Content, Sider,
@@ -36,7 +37,7 @@ function Homepage() {
         setSelectKeys(['1']);
       } else if (history.location.pathname.includes('create')) {
         setSelectKeys(['4']);
-      } else if (history.location.pathname.includes('items')) {
+      } else if (history.location.pathname.includes('item-list')) {
         setSelectKeys(['3']);
       }
     }
@@ -55,6 +56,10 @@ function Homepage() {
       breadCrumbList.push('商品');
       breadCrumbList.push('创建商品');
     }
+    if (history?.location?.pathname.includes('item-list')) {
+      breadCrumbList.push('商品');
+      breadCrumbList.push('商品列表');
+    }
     return (
       <Breadcrumb className="breadcrumb">
         {breadCrumbList.includes('首页') && (
@@ -71,6 +76,11 @@ function Homepage() {
         {breadCrumbList.includes('创建商品') && (
         <Breadcrumb.Item className="breadcrumb-child">
           创建商品
+        </Breadcrumb.Item>
+        )}
+        {breadCrumbList.includes('商品列表') && (
+        <Breadcrumb.Item className="breadcrumb-child">
+          商品列表
         </Breadcrumb.Item>
         )}
       </Breadcrumb>
@@ -95,8 +105,20 @@ function Homepage() {
             首页
           </Menu.Item>
           <SubMenu key="2" title="商品" icon={<ShoppingOutlined />}>
-            <Menu.Item key="3" icon={<UnorderedListOutlined />}>商品列表</Menu.Item>
-            <Menu.Item key="4" icon={<AppstoreAddOutlined />} onClick={() => history.push(`${url}/create`)}>添加商品</Menu.Item>
+            <Menu.Item
+              key="3"
+              icon={<UnorderedListOutlined />}
+              onClick={() => history.push(`${url}/item-list`)}
+            >
+              商品列表
+            </Menu.Item>
+            <Menu.Item
+              key="4"
+              icon={<AppstoreAddOutlined />}
+              onClick={() => history.push(`${url}/create`)}
+            >
+              添加商品
+            </Menu.Item>
           </SubMenu>
         </Menu>
       </Sider>
@@ -114,6 +136,9 @@ function Homepage() {
               </Route>
               <Route path={`${path}/create`}>
                 <CreateOrder />
+              </Route>
+              <Route path={`${path}/item-list`}>
+                <ItemList />
               </Route>
             </Switch>
           </div>

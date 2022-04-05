@@ -2,44 +2,57 @@
   max-width: 600px;
   margin: 0 auto;
   border-radius: 8px;
-  .title{
+
+  .title {
     margin-bottom: 20px;
   }
-  .ant-form-item-label{
+
+  .ant-form-item-label {
     text-align: start;
   }
-  .ant-select-selector{
+
+  .ant-select-selector {
     border-radius: 8px !important;
   }
+
   .ant-input-number {
     width: 100%;
     border-radius: 8px;
   }
-  .ant-input-number-group-wrapper{
+
+  .ant-input-number-group-wrapper {
     width: 100%;
-    .ant-input-number-group-addon{
+
+    .ant-input-number-group-addon {
       border-radius: 0px 8px 8px 0px;
     }
   }
+
   .ant-input {
     border-radius: 8px;
   }
+
   input {
     border-radius: 8px;
   }
+
   .ql-container strong {
     font-weight: bold;
   }
+
   .ql-container em {
     font-style: italic;
   }
+
   .ql-toolbar {
     border-radius: 8px 8px 0 0;
   }
+
   .ql-container {
     border-radius: 0 0 8px 8px;
   }
-  .item-image{
+
+  .item-image {
     text-align: start;
     padding-left: 16.666%;
     margin-bottom: 20px;

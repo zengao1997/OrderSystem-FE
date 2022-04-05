@@ -1,16 +1,19 @@
 @import "src/style/color";
 
 
-.login-container{
+.login-container {
   text-align: center;
+
   .card {
     margin: 140px auto;
     width: 360px;
     border-top: 10px solid $main-color;
+
     .icon {
       font-size: 56px;
       color: $main-color;
     }
+
     .header {
       font-size: 24px;
       font-family: $font;
@@ -18,12 +21,15 @@
       font-weight: 700;
       margin: 20px 0;
     }
+
     .input-icon {
       color: $main-color;
     }
+
     .input {
       border-radius: 8px;
     }
+
     .ant-form-item-explain {
       text-align: start;
     }
